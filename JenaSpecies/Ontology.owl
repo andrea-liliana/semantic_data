@@ -1,0 +1,3499 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ecology-and-endangered-species.com#"
+     xml:base="http://www.ecology-and-endangered-species.com"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.ecology-and-endangered-species.com"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#eats -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#eats">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.ecology-and-endangered-species.com#isEatenBy"/>
+        <rdfs:domain rdf:resource="http://www.ecology-and-endangered-species.com#Consumer"/>
+        <rdfs:domain rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Consumer"/>
+                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Producer"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Animalia"/>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasClimate -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasClimate">
+        <rdfs:domain rdf:resource="http://www.ecology-and-endangered-species.com#TerrestrialBiome"/>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#Climate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasConservationStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasConservationStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#ConservationStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasDiet -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasDiet">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#Diet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasMetametrismCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasMetametrismCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="http://www.ecology-and-endangered-species.com#hasMoreSpecificCharacteristic"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Metametrism"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#MetametrismCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasMoreSpecificCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasMoreSpecificCharacteristic">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Animalia"/>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#MoreSpecificCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Plantae"/>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#PlantaeCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasShellCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasShellCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="http://www.ecology-and-endangered-species.com#hasMoreSpecificCharacteristic"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Shell"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#ShellCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasSkeletonCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasSkeletonCharacteristic">
+        <rdfs:subPropertyOf rdf:resource="http://www.ecology-and-endangered-species.com#hasMoreSpecificCharacteristic"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Skeleton"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasSkeletonPlacement -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasSkeletonPlacement">
+        <rdfs:subPropertyOf rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonCharacteristic"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Skeleton"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonPlacement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#hasSkeletonType -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#hasSkeletonType">
+        <rdfs:subPropertyOf rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonCharacteristic"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Skeleton"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#isEatenBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#isEatenBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Consumer"/>
+                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Producer"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#Consumer"/>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#isThreatenedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#isThreatenedBy">
+        <rdfs:domain rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:range rdf:resource="http://www.ecology-and-endangered-species.com#Threat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#livesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecology-and-endangered-species.com#livesIn">
+        <rdfs:domain rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Biome"/>
+                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Habitat"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#nbrOfAntenna -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecology-and-endangered-species.com#nbrOfAntenna">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Arthropoda"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#nbrOfEmbryonicLeaves -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecology-and-endangered-species.com#nbrOfEmbryonicLeaves"/>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#nbrOfFingers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecology-and-endangered-species.com#nbrOfFingers">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Animalia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#nbrOfLegs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecology-and-endangered-species.com#nbrOfLegs">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Arthropoda"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#nbrOfPairedMembers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecology-and-endangered-species.com#nbrOfPairedMembers">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Osteichthyes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Abyssal -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Abyssal">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Oceans"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Actinote_zikani -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Actinote_zikani">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Pterygota"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Endangered"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#UrbanDevelopment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#SouthAmerica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Africa -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Africa">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#AgriculturalEffluent -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#AgriculturalEffluent">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Pollution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Agriculture -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Agriculture">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Exploitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Amanipodagrion_gilliesi -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Amanipodagrion_gilliesi">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Pterygota"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#CriticallyEndangered"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Pollution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Africa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#AnimalCharacteristic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#AnimalCharacteristic">
+        <rdfs:comment>This class regroups some characteristics use to describe animals.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Arctic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Arctic">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ArcticOcean -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ArcticOcean">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Asia -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Asia">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Atelopus_balios -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Atelopus_balios">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Lissamphibia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#CriticallyEndangered"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Agriculture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Logging"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Africa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#AtlanticOcean -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#AtlanticOcean">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#AustralOcean -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#AustralOcean">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#AvalanchesLandslides -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#AvalanchesLandslides">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Bar-built -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Bar-built">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Estuaries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Benthic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Benthic">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Oceans"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Biome -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Biome">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#MarineBiome"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#TerrestrialBiome"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment>Regroups different biomes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#BoneSkeleton -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#BoneSkeleton">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Bryophite -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Bryophite">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Bryophyte"/>
+        <rdfs:comment>mousse</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Carnivore -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Carnivore">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Consumer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#CartilageSkeleton -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#CartilageSkeleton">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Cephalothorax -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Cephalothorax">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ChitinSkeleton -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ChitinSkeleton">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Chlorophylle -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Chlorophylle">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#PlantaeCharacteristic"/>
+        <rdfs:comment>Chrolophylle is what makes photsynthesis</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Climate -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Climate">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Continental"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Dry"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Polar"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Temperate"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Tropical"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment>Regroups different climates</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ClimateChange -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ClimateChange">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Cnidocyte -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Cnidocyte">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+        <rdfs:comment>Can be referred as a stinging harpoon</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Coastal_plain -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Coastal_plain">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Estuaries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ColdDesert -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ColdDesert">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MiddleLatitudeBiome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Dry"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Conductor_Vessels -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Conductor_Vessels">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#PlantaeCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ConservationDependent -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ConservationDependent">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#LowerRiskStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ConservationStatus -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ConservationStatus">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#ExtinctStatus"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#LowerRiskStatus"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#ThreatenedStatus"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment>Regroups different conservation status used to discribe the conservation status of a species.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Consumer -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Consumer">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Diet"/>
+        <owl:disjointWith rdf:resource="http://www.ecology-and-endangered-species.com#Producer"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Carnivore"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Herbivore"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Omnivore"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Continental -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Continental">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Climate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Coral_reefs -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Coral_reefs">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MarineBiome"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#CriticallyEndangered -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#CriticallyEndangered">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ThreatenedStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Dams -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Dams">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Exploitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Diet -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Diet">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Consumer"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Producer"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment>Regroups different types of diet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Disease -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Disease">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Invasion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#DorsalShell -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#DorsalShell">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ShellCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Droughts -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Droughts">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ClimateChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Dry -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Dry">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Climate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Earthquakes -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Earthquakes">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Endangered -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Endangered">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ThreatenedStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#EnergyProduction -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#EnergyProduction">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Exploitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Equisetidae -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Equisetidae">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Tracheophyta"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Produce_Spore"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Tracheophyta"/>
+        <rdfs:comment>Plants that produce spores. (not a fruit)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Estuaries -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Estuaries">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MarineBiome"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Eurasian_otter -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Eurasian_otter">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mammalia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#NearThreatened"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Piscivore"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Logging"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Asia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Europe"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Europe -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Europe">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Exploitation -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Exploitation">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ExternalSkeleton -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ExternalSkeleton">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonPlacement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Extinct -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Extinct">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ExtinctStatus"/>
+        <owl:disjointWith rdf:resource="http://www.ecology-and-endangered-species.com#ExtinctInTheWild"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ExtinctInTheWild -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ExtinctInTheWild">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ExtinctStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ExtinctStatus -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ExtinctStatus">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ConservationStatus"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Extinct"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#ExtinctInTheWild"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Feathers -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Feathers">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Fins -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Fins">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Fires -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Fires">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Fishing -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Fishing">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Exploitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Fjord -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Fjord">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Estuaries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Flooding -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Flooding">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ClimateChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Forest -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Forest">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Freshwater -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Freshwater">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Estuaries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Fungi -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Fungi">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:comment>champignons</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#GeographicalLocation -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#GeographicalLocation">
+        <rdfs:comment>Mutliple locations on Earth</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Gizzard -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Gizzard">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#GlobalWarming -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#GlobalWarming">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ClimateChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Habitat -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Habitat"/>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#HabitatAlteration -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#HabitatAlteration">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ClimateChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Herbivore -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Herbivore">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Consumer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#HiddenShell -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#HiddenShell">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ShellCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#HighLatitudeBiome -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#HighLatitudeBiome">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#TerrestrialBiome"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Taiga"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Tundra"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#HomoSapiens -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#HomoSapiens">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mammalia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Hunting -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Hunting">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Hypercarnivore -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Hypercarnivore">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Carnivore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Hypocarnivore -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Hypocarnivore">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Carnivore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#IceFloe -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#IceFloe">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#IdianOcean -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#IdianOcean">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#IndustrialDevelopment -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#IndustrialDevelopment">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#UrbanDevelopment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#IndustrialEffluent -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#IndustrialEffluent">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Pollution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Insectivore -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Insectivore">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Carnivore"/>
+        <owl:disjointWith rdf:resource="http://www.ecology-and-endangered-species.com#Piscivore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#InternalSkeleton -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#InternalSkeleton">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonPlacement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Intertidal -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Intertidal">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Oceans"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Invasion -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Invasion">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#InvasiveSpecies -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#InvasiveSpecies">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Invasion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#LeastConcern -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#LeastConcern">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#LowerRiskStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Liliidae -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Liliidae">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Monocotyledon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#LimestoneSkeleton -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#LimestoneSkeleton">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Lion -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Lion">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Mammals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Skeleton"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Vulnerable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonType"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#BoneSkeleton"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Agriculture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hunting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#UrbanDevelopment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Asia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#TropicalGrassland"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#WarmDesert"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:allValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hypercarnivore"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfPairedMembers"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class is just here to test the inference of the protege reasoner</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#LivingOrganism -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#LivingOrganism">
+        <rdfs:comment>Regroups everything that lives, everything that has cells.</rdfs:comment>
+        <rdfs:comment>The cell is the fundamental unit of living organisms. Everything that has a cell is a living organism.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#LoadBearingFoot -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#LoadBearingFoot">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Logging -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Logging">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Exploitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#LowLatitudeBiome -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#LowLatitudeBiome">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#TerrestrialBiome"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#TropicalGrassland"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#TropicalRainforest"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#WarmDesert"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#LowerRiskStatus -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#LowerRiskStatus">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ConservationStatus"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#ConservationDependent"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#LeastConcern"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#NearThreatened"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Mammals -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Mammals">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Manakin_de_Bokermann -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Manakin_de_Bokermann">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Aves"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#CriticallyEndangered"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Agriculture"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#SouthAmerica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#MarineBiome -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#MarineBiome">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Biome"/>
+        <owl:disjointWith rdf:resource="http://www.ecology-and-endangered-species.com#TerrestrialBiome"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Mesocarnivore -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Mesocarnivore">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Carnivore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Metametrism -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Metametrism">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+        <rdfs:comment>Metametrism is a charcateristic for the animals whose body is made of a succession of segments.</rdfs:comment>
+        <rdfs:comment>https://en.wikipedia.org/wiki/Metamerism_(biology)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#MetametrismCharacteristic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#MetametrismCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MoreSpecificCharacteristic"/>
+        <rdfs:comment>Metametrism is a charcateristic for the animals whose body is made of a succession of segments.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#MiddleLatitudeBiome -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#MiddleLatitudeBiome">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#TerrestrialBiome"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#ColdDesert"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#TemperateDeciduousForest"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#TemperateGrassland"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#MiningQuarrying -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#MiningQuarrying">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#EnergyProduction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#MiningQuarrying"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>connfière menacé par puits de carbonne</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#MoreSpecificCharacteristic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#MoreSpecificCharacteristic">
+        <rdfs:comment>This class regroups the animal haracteristics that usually need some specification</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#NaturalDisaster -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#NaturalDisaster">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#NearThreatened -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#NearThreatened">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#LowerRiskStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Non_Protected_Seed -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Non_Protected_Seed">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Produce_Seed"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#NorthAmerica -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#NorthAmerica">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Oceania -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Oceania">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Oceans -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Oceans">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MarineBiome"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#OilGasDrilling -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#OilGasDrilling">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#EnergyProduction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Omnivore -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Omnivore">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Consumer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Orchidae -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Orchidae">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Liliidae"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#PacificOcean -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#PacificOcean">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Pelagic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Pelagic">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Oceans"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Piscivore -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Piscivore">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Carnivore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#PlantaeCharacteristic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#PlantaeCharacteristic">
+        <rdfs:comment>Some characteristics used to describe plants</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Polar -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Polar">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Climate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Pollution -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Pollution">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#PreyScarcity -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#PreyScarcity">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Produce_Seed -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Produce_Seed">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#PlantaeCharacteristic"/>
+        <owl:disjointWith rdf:resource="http://www.ecology-and-endangered-species.com#Produce_Spore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Produce_Spore -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Produce_Spore">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#PlantaeCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Producer -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Producer">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Diet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Protected_Seed -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Protected_Seed">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Produce_Seed"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Pteridophyta -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Pteridophyta">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Tracheophyta"/>
+        <rdfs:comment>fougères, avoir si ici ou dans plantes a graines</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#RenewableEnergy -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#RenewableEnergy">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#EnergyProduction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ResidentialDevelopment -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ResidentialDevelopment">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#UrbanDevelopment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#SegmentWithLegs -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#SegmentWithLegs">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MetametrismCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#SegmentWithoutLegs -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#SegmentWithoutLegs">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MetametrismCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Shell -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Shell">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ShellCharacteristic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ShellCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MoreSpecificCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Skeleton -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Skeleton">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#SkeletonCharacteristic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#SkeletonCharacteristic">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MoreSpecificCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#SkeletonPlacement -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#SkeletonPlacement">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#SkeletonType -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#SkeletonType">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#SkinSkeleton -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#SkinSkeleton">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#SkeletonPlacement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#SouthAmerica -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#SouthAmerica">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#GeographicalLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Taiga -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Taiga">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#HighLatitudeBiome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Continental"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Polar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Tectonic -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Tectonic">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Estuaries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Temperate -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Temperate">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Climate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#TemperateDeciduousForest -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#TemperateDeciduousForest">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MiddleLatitudeBiome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Temperate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#TemperateGrassland -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#TemperateGrassland">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#MiddleLatitudeBiome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Continental"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Temperate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#TemperateGrassland"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#TemperatureExtremes -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#TemperatureExtremes">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ClimateChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Tentacles -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Tentacles">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#TerrestrialBiome -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#TerrestrialBiome">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Biome"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#HighLatitudeBiome"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#LowLatitudeBiome"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#MiddleLatitudeBiome"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Threat -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Threat"/>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#ThreatenedStatus -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#ThreatenedStatus">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ConservationStatus"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#CriticallyEndangered"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Endangered"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Vulnerable"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Tourism -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Tourism">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#UrbanDevelopment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Transportation -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Transportation">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#UrbanDevelopment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#TriangularHole -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#TriangularHole">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+        <rdfs:comment>Some animals have a triangular hole that can be found or their temples.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Tropical -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Tropical">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Climate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#TropicalGrassland -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#TropicalGrassland">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#LowLatitudeBiome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Dry"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Tropical"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#TropicalRainforest -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#TropicalRainforest">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#LowLatitudeBiome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Tropical"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Tsunamis -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Tsunamis">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Tundra -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Tundra">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#HighLatitudeBiome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Polar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#TwoPartShell -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#TwoPartShell">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ShellCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#UrbanDevelopment -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#UrbanDevelopment">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#UrbanWaste -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#UrbanWaste">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Pollution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#VentralShell -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#VentralShell">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ShellCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#VisibleShell -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#VisibleShell">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ShellCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#VolcanicEruptions -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#VolcanicEruptions">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Vulnerable -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Vulnerable">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#ThreatenedStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#WarmDesert -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#WarmDesert">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#LowLatitudeBiome"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Dry"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#WideJaw -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#WideJaw">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Wingless -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Wingless">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Wings -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Wings">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#AnimalCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Leaves&amp;Rods -->
+
+    <owl:Class rdf:about="http://www.ecology-and-endangered-species.com#Leaves&amp;Rods">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#PlantaeCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Actinopterygii -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Actinopterygii">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Osteichthyes"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Fins"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Osteichthyes"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Tetrapoda"/>
+        <rdfs:comment>Actinopterygii are osteichthyes that have fins</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Animalia -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Animalia">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:comment>Animal classification is mainly inspired by this website: http://soutien67.free.fr/svt/animaux/classification/classification01.htm</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Annelida -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Annelida">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasMetametrismCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#SegmentWithoutLegs"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Animalia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Metametrism"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Annelida are animal whose body is made out of multiple rings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Apterygota -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Apterygota">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Insecta"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Wingless"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Insecta"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Pterygota"/>
+        <rdfs:comment>Apterygota are insecta that don&apos;t have wings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Arachnida -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Arachnida">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Arthropoda"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfLegs"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Arthropoda"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Cephalothorax"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Arachnida are arthropoda with 8 legs</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Archosauria -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Archosauria">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Tetrapoda"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Gizzard"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Tetrapoda"/>
+        <rdfs:comment>Archosauria are tetrapoda that have a gizzard</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Arthropoda -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Arthropoda">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonPlacement"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#ExternalSkeleton"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonType"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#ChitinSkeleton"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Animalia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Skeleton"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Arthropada are animals that have an external squeleton.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Aves -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Aves">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Archosauria"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Feathers"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Archosauria"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Crocodilia"/>
+        <rdfs:comment>Aves are archosauria that have feathers</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Bivalvia -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Bivalvia">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Mollusca"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasShellCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#TwoPartShell"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mollusca"/>
+        <rdfs:comment>Bivalva are mollusca that have a shell in two parts</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Bryophyte -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Bryophyte">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Embryophita"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Tracheophyta"/>
+        <rdfs:comment>non-vascular land plants</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Cedrus_atlantica -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Cedrus_atlantica">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Gymnosperm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Endangered"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Producer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#GlobalWarming"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Africa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>connifers, lives in morocco-algeria massive</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Cephalopoda -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Cephalopoda">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Mollusca"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Tentacles"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mollusca"/>
+        <rdfs:comment>Cephalopoda are mollusca that have tentacles on the head</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Cheetah -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Cheetah">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mammalia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Vulnerable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hypercarnivore"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hunting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Africa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Chlorophyta -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Chlorophyta">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Plantae"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Embryophita"/>
+        <rdfs:comment>Chlorophyta are plants with simplified organs, We cannot clearly distinct the leaf and the rods.</rdfs:comment>
+        <rdfs:comment>There are the Plantae under water such as alguae</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Chondrichthyes -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Chondrichthyes">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Vertebrata"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonType"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#CartilageSkeleton"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Vertebrata"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Fins"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Osteichthyes"/>
+        <rdfs:comment>Chondrichtyes are vertebrata whose skeleton is made out of cartilage</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Cnidaria -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Cnidaria">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Cnidocyte"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Animalia"/>
+        <rdfs:comment>Cnidaria anre animals that have stinging harpoon</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Crocodilia -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Crocodilia">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Archosauria"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#TriangularHole"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Archosauria"/>
+        <rdfs:comment>Crocodilia are archosauria that have a triangular hole on their temples</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Crustacea -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Crustacea">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Arthropoda"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfAntenna"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Arthropoda"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Cephalothorax"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Crustacea are arthropoda with 4 antennas</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Dicotyledon -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Dicotyledon">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Magnoliophyta"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfEmbryonicLeaves"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Magnoliophyta"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Monocotyledon"/>
+        <rdfs:comment>the seed has two embryonic leaves</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Echinodermata -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Echinodermata">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonPlacement"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#SkinSkeleton"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonType"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#LimestoneSkeleton"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Animalia"/>
+        <rdfs:comment>Echinodermata are animals that have their skeleton in their skins.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Embryophita -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Embryophita">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Plantae"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Leaves&amp;Rods"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Plantae"/>
+        <rdfs:comment>Embryophita are plantae that have 2 distinct organes : rods and leaves</rdfs:comment>
+        <rdfs:comment>They are the plants the Land Plants</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Equisetum_arvense -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Equisetum_arvense">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Equisetidae"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Temperate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#LeastConcern"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Producer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Arctic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Gastropoda -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Gastropoda">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Mollusca"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#LoadBearingFoot"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mollusca"/>
+        <rdfs:comment>Gastropoda are mollusca that move on one &apos;foot&apos;. Like snails for example</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Giraffe -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Giraffe">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mammalia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Vulnerable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hunting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Africa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Gymnosperm -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Gymnosperm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Spermatophyte"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Non_Protected_Seed"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Spermatophyte"/>
+        <owl:disjointWith rdf:resource="https://en.wikipedia.org/wiki/Magnoliophyta"/>
+        <rdfs:comment>The name is based on the unenclosed condition of their seeds. connifere</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Insecta -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Insecta">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Arthropoda"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfLegs"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Arthropoda"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfAntenna"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Apterygota"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Pterygota"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment>Insecta are arthropoda with six legs</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Leopard -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Leopard">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mammalia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Vulnerable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hypercarnivore"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hunting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Logging"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#PreyScarcity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#UrbanDevelopment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Africa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Asia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Lissamphibia -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Lissamphibia">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Tetrapoda"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfFingers"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Tetrapoda"/>
+        <rdfs:comment>Lissamphibia are tetrapoda that have four fingers on their hand</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Magnoliophyta -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Magnoliophyta">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Spermatophyte"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Protected_Seed"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Spermatophyte"/>
+        <rdfs:comment>a plant that produces seeds within an enclosure</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Malus -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Malus">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Dicotyledon"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Continental"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#LeastConcern"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Producer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Africa"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Asia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Europe"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#NorthAmerica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Oceania"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#SouthAmerica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Apple tree</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Mammalia -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Mammalia">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Tetrapoda"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Mammals"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Tetrapoda"/>
+        <rdfs:comment>Mammalia are tetrapoda that have mammalia</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Marchantia_polymorpha -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Marchantia_polymorpha">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Bryophite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Temperate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#TemperateGrassland"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#LeastConcern"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Producer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Marsilea_crenata -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Marsilea_crenata">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Pteridophyta"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Abyssal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#LeastConcern"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Producer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Asia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Lives in deep water</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Mollusca -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Mollusca">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasShellCharacteristic"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#HiddenShell"/>
+                                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#VisibleShell"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Animalia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Shell"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Mollusca are animals that have a shell. Their shell can either be visible or hidden.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Monocotyledon -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Monocotyledon">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Magnoliophyta"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfEmbryonicLeaves"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Magnoliophyta"/>
+        <rdfs:comment>the seed has only one embryonic leave</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Myriapoda -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Myriapoda">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Arthropoda"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasMetametrismCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#SegmentWithLegs"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Arthropoda"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Metametrism"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfAntenna"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Myriapoda are arthropoda whose body is made out of multiple segments. Each segment presents a pair a legs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Nepenthes_attenboroughii -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Nepenthes_attenboroughii">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Dicotyledon"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Continental"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#CriticallyEndangered"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Insectivore"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hunting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Asia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>carnivorous plants</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Osteichthyes -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Osteichthyes">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Vertebrata"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonType"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#BoneSkeleton"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Vertebrata"/>
+        <rdfs:comment>Chondrichtyes are vertebrata whose skeleton is made out of bones</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Plantae -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Plantae">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Chlorophylle"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#LivingOrganism"/>
+        <rdfs:comment>One reference for the classification of the plants: https://www.animateur-nature.com/Autres_sujets/classifications.php</rdfs:comment>
+        <rdfs:comment>Plants are living organism that do photosynthesis</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Polar_bear -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Polar_bear">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mammalia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Vulnerable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Carnivore"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#GlobalWarming"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Arctic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#IceFloe"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#NorthAmerica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Pterygota -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Pterygota">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Insecta"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Wings"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Insecta"/>
+        <rdfs:comment>Pterygota are insecta who have wings or who had an incestor who had wings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Rhizanthella_gardneri -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Rhizanthella_gardneri">
+        <rdfs:subClassOf rdf:resource="http://www.ecology-and-endangered-species.com#Orchidae"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasClimate"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Temperate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#CriticallyEndangered"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Producer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#GlobalWarming"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Oceania"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Seahorse -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Seahorse">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Actinopterygii"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Fishing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#PacificOcean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Spermatophyte -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Spermatophyte">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Tracheophyta"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Produce_Seed"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Tracheophyta"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Produce_Seed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Plants that produce seed</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Squamata -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Squamata">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Tetrapoda"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#WideJaw"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Tetrapoda"/>
+        <rdfs:comment>Squamata are tetrapoda that have a very wide jaw</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Testudines -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Testudines">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Tetrapoda"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasShellCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#DorsalShell"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasShellCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#VentralShell"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Tetrapoda"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasAnimalCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Shell"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Testudines are tetrapoda that have a dorsal and ventral shell</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Tetrapoda -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Tetrapoda">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Osteichthyes"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#nbrOfPairedMembers"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Osteichthyes"/>
+        <rdfs:comment>Tetrapoda are osteichtyes who have two piars of paired members. It can be two pairs of legs, a pair of leg and a pair of arms, a pair of legs and a pair of wings,...</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Tiger -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Tiger">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Mammalia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasConservationStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Endangered"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasDiet"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hypercarnivore"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Hunting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#isThreatenedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#PreyScarcity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Asia"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#livesIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Forest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Tracheophyta -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Tracheophyta">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Embryophita"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasPlantaeCharacteristic"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#Conductor_Vessels"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Embryophita"/>
+        <rdfs:comment>vascular land plants</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://en.wikipedia.org/wiki/Vertebrata -->
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Vertebrata">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonPlacement"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ecology-and-endangered-species.com#InternalSkeleton"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ecology-and-endangered-species.com#hasSkeletonType"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#BoneSkeleton"/>
+                                    <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#CartilageSkeleton"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Animalia"/>
+        <rdfs:comment>Vertebrata are animals that have an internal skeleton</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Bambu -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecology-and-endangered-species.com#Bambu">
+        <rdf:type rdf:resource="https://en.wikipedia.org/wiki/Plantae"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Pommier -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecology-and-endangered-species.com#Pommier"/>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#Tigrou -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecology-and-endangered-species.com#Tigrou"/>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#WhiteShark -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecology-and-endangered-species.com#WhiteShark">
+        <eats rdf:resource="http://www.ecology-and-endangered-species.com#Bambu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#human -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecology-and-endangered-species.com#human">
+        <rdf:type rdf:resource="https://en.wikipedia.org/wiki/Tetrapoda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#mammals -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecology-and-endangered-species.com#mammals">
+        <rdf:type rdf:resource="http://www.ecology-and-endangered-species.com#Mammals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecology-and-endangered-species.com#nepenthes -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecology-and-endangered-species.com#nepenthes">
+        <rdf:type rdf:resource="https://en.wikipedia.org/wiki/Nepenthes_attenboroughii"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Abyssal"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Benthic"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Intertidal"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Pelagic"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Africa"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#ArcticOcean"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Asia"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#AtlanticOcean"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#AustralOcean"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Europe"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#IdianOcean"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#NorthAmerica"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Oceania"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#PacificOcean"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#SouthAmerica"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Bar-built"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Coastal_plain"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Fjord"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Freshwater"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Tectonic"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Carnivore"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Herbivore"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Omnivore"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#ConservationDependent"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#LeastConcern"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#NearThreatened"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Coral_reefs"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Estuaries"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Oceans"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#CriticallyEndangered"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Endangered"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Vulnerable"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Equisetidae"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Pteridophyta"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Spermatophyte"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Fungi"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Animalia"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Plantae"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Hypercarnivore"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Hypocarnivore"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Mesocarnivore"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Annelida"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Arthropoda"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Cnidaria"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Echinodermata"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Mollusca"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Vertebrata"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Arachnida"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Crustacea"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Insecta"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Myriapoda"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Archosauria"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Lissamphibia"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Mammalia"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Squamata"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Testudines"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Bivalvia"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Cephalopoda"/>
+            <rdf:Description rdf:about="https://en.wikipedia.org/wiki/Gastropoda"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#Tigrou"/>
+            <rdf:Description rdf:about="http://www.ecology-and-endangered-species.com#human"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

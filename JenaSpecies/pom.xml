@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>INFO8005</groupId>
+  <artifactId>OntologyJenaAPI</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+        <version.commons-io>2.4</version.commons-io>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${version.commons-io}</version>
+        </dependency>
+        <dependency>
+        <groupId>org.apache.jena</groupId>
+        <artifactId>apache-jena-libs</artifactId>
+        <type>pom</type>
+        <version>3.17.0</version>
+        </dependency>
+    </dependencies>
+  
+</project>

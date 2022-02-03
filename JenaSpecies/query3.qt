@@ -1,0 +1,29 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX living: <https://en.wikipedia.org/wiki/>
+PREFIX : <http://www.ecology-and-endangered-species.com#>
+SELECT ?plante_conductor_seed ?threat ?location
+	WHERE { ?plante rdfs:subClassOf* living:Plantae .
+	 ?plante owl:equivalentClass [ owl:intersectionOf ( ?any_plante
+												    [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :hasPlantaeCharacteristic ;
+                                                                                           owl:someValuesFrom :Conductor_Vessels
+                                                                                           ]
+												     ) ; rdf:type owl:Class].
+				?plante_conductor rdfs:subClassOf* ?plante .
+				?plante_conductor owl:equivalentClass [ owl:intersectionOf ( ?any_plant
+												    [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :hasPlantaeCharacteristic ;
+                                                                                           owl:someValuesFrom :Produce_Seed
+                                                                                           ]
+												     ) ; rdf:type owl:Class].
+	?plante_conductor_seed rdfs:subClassOf* ?plante_conductor.	?plante_conductor_seed rdfs:subClassOf [ rdf:type owl:Restriction ;
+		owl:onProperty :isThreatenedBy;
+		owl:someValuesFrom ?threat] .
+	?threat rdfs:subClassOf :Threat.	?plante_conductor_seed rdfs:subClassOf [ rdf:type owl:Restriction ;
+		owl:onProperty :livesIn;
+		owl:someValuesFrom ?location] .
+	?location rdfs:subClassOf :GeographicalLocation
+}
